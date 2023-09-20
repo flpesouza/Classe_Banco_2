@@ -1,0 +1,66 @@
+public class ContaCorrente {
+  private int numero; 
+  private int digito; 
+  private double saldo; 
+  private Agencia agencia; 
+  
+  public ContaCorrente(int numero, int digito, double saldo, Agencia agencia){ 
+    this.numero = numero; 
+    this.digito = digito; 
+    this.saldo = saldo; 
+    this.agencia = agencia; 
+  } 
+
+  public int getNumero(){ 
+    return numero; 
+  } 
+
+  public int getDigito(){ 
+    return digito; 
+  } 
+
+  public double getSaldo(){ 
+    return saldo; 
+  } 
+
+  public Agencia getAgencia(){ 
+    return agencia; 
+  } 
+
+  public void setNumero(int numero){ 
+    this.numero = numero; 
+  } 
+
+  public void setDigito(int digito){ 
+    this.digito = digito; 
+  } 
+
+  public void setSaldo(double saldo){ 
+    this.saldo = saldo; 
+  } 
+
+  public void setAgencia(Agencia agencia){ 
+    this.agencia = agencia; 
+  } 
+
+  public double depositar(double valor){ 
+    return this.saldo + valor; 
+  } 
+
+  public double sacar(double valor){
+    if(saldo<valor){ 
+      System.out.println("Saldo insuficiente!"); 
+      return 0; 
+    } 
+    saldo -= valor; 
+    return valor; 
+  } 
+
+  public double consultarSaldo(){ 
+    return saldo; 
+  } 
+
+  public void imprimirSaldo(){ 
+    System.out.println("Numero:"+numero+"-"+digito+"\nAgencia:"+agencia.getNumero()+"-"+agencia.getDigito()+"\nSaldo:"+saldo); 
+  } 
+}
